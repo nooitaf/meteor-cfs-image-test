@@ -1,0 +1,46 @@
+<head>
+  <title>cfs-image-test</title>
+</head>
+
+<body>
+  {{> page}}
+</body>
+
+<template name="page">
+	{{> uploader}}
+	{{> grid}}
+</template>
+
+<template name="uploader">
+  <div class="row-fluid">
+    <div class="" style="padding:10px;;margin:0 auto;background:white;">
+      Select file(s) to upload (<b>JPG only</b>)
+      <input name="files" id="files" type="file" class="fileUploader" multiple>
+    </div>
+  </div>
+</template>
+
+<template name="grid">
+  <div class="row-fluid">
+    {{#each images}}
+      <div class="col-sm-1">
+        {{#if isUploaded}}
+          <div>
+          	<img src="{{this.url store='images-1024'}}" height="64" width="64">
+ 	          <span class="remove" style="cursor:pointer;">x</span>
+          </div>
+        {{else}}
+        	{{#if uploadProgress}}
+            <div class="progress">
+              <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{uploadProgress}}" aria-valuemin="5" aria-valuemax="100" style="width: {{uploadProgress}}%;">
+                {{uploadProgress}}%
+              </div>
+            </div>
+        	{{/if}}
+        {{/if}}
+      </div>
+    {{else}}
+      <h3>No files uploaded.</h3>
+    {{/each}}
+  </div>
+</template>
