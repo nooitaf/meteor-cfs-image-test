@@ -1,8 +1,17 @@
 ## Small test for image download bug
 
-Uploaded images bigger then ~70kb might not load in browser and show error: 
-`net::ERR_INCOMPLETE_CHUNKED_ENCODING attrs.js:35`
+Uploaded images bigger then ~70kb might not load in browser and show error:  
+`net::ERR_INCOMPLETE_CHUNKED_ENCODING`  
+`attrs.js:35`  
+when using  
+`{{url store="images-1024"}}`  
 
+#### System
+````bash
+nginx version: nginx/1.6.0
+meteor Release 0.8.1.2
+Ubuntu 12.04 3.8.0-38-generic x86_64
+````
 
 #### Install
 ````bash
