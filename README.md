@@ -1,6 +1,10 @@
-##Small test for image download bug
+## Small test for image download bug
 
-install
+Uploaded images bigger then ~70kb might not load in browser and show error: 
+`net::ERR_INCOMPLETE_CHUNKED_ENCODING attrs.js:35`
+
+
+#### Install
 ````bash
 meteor remove insecure autopublish
 
@@ -12,7 +16,7 @@ mrt add bootstrap-3
 ./start.sh
 ````
 
-nginx.conf
+#### nginx.conf
 ````bash
 worker_processes  1;
 events {
