@@ -2,28 +2,24 @@
 var imagesOriginal = new FS.Store.FileSystem("images-original", {});
 
 var images1024 = new FS.Store.FileSystem("images-1024", {
-  path: "~/storage/test/images/x1024", 
   transformWrite: function(fileObj, readStream, writeStream) {
     gm(readStream, fileObj.name()).resize('1024', '1024').stream().pipe(writeStream);
   }
 });
 
 var images512 = new FS.Store.FileSystem("images-512", {
-  path: "~/storage/test/images/x512", 
   transformWrite: function(fileObj, readStream, writeStream) {
     gm(readStream, fileObj.name()).resize('512', '512').stream().pipe(writeStream);
   }
 });
 
 var images256 = new FS.Store.FileSystem("images-256", {
-  path: "~/storage/test/images/x256", 
   transformWrite: function(fileObj, readStream, writeStream) {
     gm(readStream, fileObj.name()).resize('256', '256').stream().pipe(writeStream);
   }
 });
 
 var images64 = new FS.Store.FileSystem("images-64", {
-  path: "~/storage/test/images/x64", 
   transformWrite: function(fileObj, readStream, writeStream) {
     gm(readStream, fileObj.name()).resize('64', '64').stream().pipe(writeStream);
   }
