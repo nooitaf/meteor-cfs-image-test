@@ -7,8 +7,8 @@
 </body>
 
 <template name="page">
-	{{> uploader}}
-	{{> grid}}
+  {{> uploader}}
+  {{> grid}}
 </template>
 
 <template name="uploader">
@@ -26,17 +26,20 @@
       <div class="col-sm-1">
         {{#if isUploaded}}
           <div>
-          	<img src="{{this.url store='images-1024'}}" height="64" width="64">
- 	          <span class="remove" style="cursor:pointer;">x</span>
+            <img src="{{this.url store='images-1024'}}" height="64" width="64">
+            <img src="{{this.url store='images-512'}}"  height="32" width="32">
+            <img src="{{this.url store='images-256'}}"  height="24" width="24">
+            <img src="{{this.url store='images-64'}}"   height="12" width="12">
+ 	    <span class="remove" style="cursor:pointer;">x</span>
           </div>
         {{else}}
-        	{{#if uploadProgress}}
+          {{#if uploadProgress}}
             <div class="progress">
               <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{uploadProgress}}" aria-valuemin="5" aria-valuemax="100" style="width: {{uploadProgress}}%;">
                 {{uploadProgress}}%
               </div>
             </div>
-        	{{/if}}
+          {{/if}}
         {{/if}}
       </div>
     {{else}}
