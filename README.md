@@ -1,3 +1,6 @@
+# - _DEPRECATED_ -
+This was using meteor 0.8.1.2, so dont use it! Its just here for reference or later use of nginx settings.
+
 ## Small test for image download bug
 
 Uploaded images bigger then ~70kb might not load in browser and show error:  
